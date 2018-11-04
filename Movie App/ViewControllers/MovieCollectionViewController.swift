@@ -75,6 +75,13 @@ class MovieCollectionViewController: UICollectionViewController {
 extension MovieCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        let movie = moviesToDisplay[indexPath.row]
+
+        guard let detailController = self.storyboard?.instantiateViewController(withIdentifier: StoryBoardViewController.MovieDetailViewController) as? MovieDetailViewController, let imageService = self.imageService  else { return }
+
+        detailController.configure(with: movie, imageService: imageService)
+
+        self.navigationController?.pushViewController(detailController, animated: true)
     }
 
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -83,6 +90,23 @@ extension MovieCollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
+        guard let movieCell = cell as? MovieCollectionViewControllerCell else { return }
+        let movie = moviesToDisplay[indexPath.row]
+
+        movieCell.titleLabel?.text = movie.title
+
+        if let path = movie.posterPath {
+
+            let posterImageURL = "https://image.tmdb.org/t/p/w500" + path
+            movieCell.imageURL = posterImageURL
+
+            imageService?.loadImage(forURL: posterImageURL, completion: { (imageUrl, image, error) in
+
+                if movieCell.imageURL == imageUrl {
+                    movieCell.imageView?.image = image
+                }
+            })
+        }
     }
 }
 

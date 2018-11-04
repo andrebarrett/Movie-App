@@ -25,7 +25,6 @@ class MovieServiceParser: ServiceParser {
 
             parseMovies(movieData: albumArray)
             success = true
-
         }
 
         return success

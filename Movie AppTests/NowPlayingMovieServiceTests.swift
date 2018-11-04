@@ -26,7 +26,7 @@ class NowPlayingMovieServiceTests: XCTestCase {
 
     func testService_CreatesValidURLForNowPlaying() {
 
-        let expectedURL = "https://api.themoviedb.org/3/movies/get-now-playing?api_key=7d758c986ac4f389a8ffe19bbf626715"
+        let expectedURL = "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=7d758c986ac4f389a8ffe19bbf626715"
 
         service.getNowPlayingMovies() { (error) in
 

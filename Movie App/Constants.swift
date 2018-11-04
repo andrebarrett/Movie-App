@@ -9,7 +9,7 @@ let API_READ_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZDc1OGM5O
 
 let BASE_URL = "https://api.themoviedb.org"
 let VersionPath = "/3/"
-let NowPlayingQuery = "movies/get-now-playing?api_key=$API_KEY"
+let NowPlayingQuery = "movie/now_playing?page=1&language=en-US&api_key=$API_KEY"
 
 enum StoryBoardViewController {
     static let MovieCollectionViewController = "MovieCollectionViewController"
