@@ -51,9 +51,9 @@ class NowPlayingMovieServiceImpl: NowPlayingMovieService {
 
                 guard let jsonData = data else { throw ServiceError.noData }
                 let jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                let itemArray = jsonResult as AnyObject
 
-                let dataDictionary = ["data": itemArray]
+                guard let dataDictionary = jsonResult as? [String: AnyObject] else { throw ServiceError.parseError }
+
                 let success = self.serviceParser.parseDataDictionary(dataDictionary)
 
                 guard success else { throw ServiceError.parseError }

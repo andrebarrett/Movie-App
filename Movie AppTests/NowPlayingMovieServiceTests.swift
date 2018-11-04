@@ -39,4 +39,44 @@ class NowPlayingMovieServiceTests: XCTestCase {
 
         XCTAssertEqual(urlString, expectedURL)
     }
+
+    func testService_ParsesResponseData() {
+
+        setupMockResponseData()
+
+        service.getNowPlayingMovies() { (error) in
+
+        }
+
+        guard let dictionary = mockServiceParser.dictionaryPassed else {
+            XCTFail("Didn't receive dictionary")
+            return
+        }
+
+        guard let array = dictionary[MovieResponseAttributes.Results] as? [Dictionary<String, AnyObject>] else {
+            XCTFail("Didn't receive array in dictionary")
+            return
+        }
+
+        XCTAssertEqual(array.count, 20)
+    }
+
+    func setupMockResponseData() {
+        guard let path = Bundle(for: NowPlayingMovieServiceTests.self).path(forResource: "NowPlayingResponse", ofType: "json") else {
+            XCTFail("No json file found")
+            return
+        }
+
+        guard let jsonString = try? String(contentsOfFile: path) else {
+            XCTFail("No json string file found")
+            return
+        }
+
+        guard let jsonData = jsonString.data(using: .utf8) else {
+            XCTFail("No json data available in string")
+            return
+        }
+
+        mockNetworkRequestService.dataToReturn = jsonData
+    }
 }
