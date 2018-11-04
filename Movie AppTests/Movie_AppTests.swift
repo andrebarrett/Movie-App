@@ -1,8 +1,4 @@
 //
-//  Movie_AppTests.swift
-//  Movie AppTests
-//
-//  Created by Andre Barrett on 03/11/2018.
 //  Copyright © 2018 iMobilize. All rights reserved.
 //
 
