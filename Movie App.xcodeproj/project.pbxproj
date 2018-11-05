@@ -27,6 +27,10 @@
 		65B470C9218DE97500E45AF4 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B470C7218DE97500E45AF4 /* ImageService.swift */; };
 		65B470CB218DEBCE00E45AF4 /* MovieCollectionViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B470CA218DEBCE00E45AF4 /* MovieCollectionViewControllerCell.swift */; };
 		65B470CD218DEE3800E45AF4 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B470CC218DEE3800E45AF4 /* MovieDetailViewController.swift */; };
+		65F4233D2190CFF5003284ED /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F4233C2190CFF5003284ED /* MovieService.swift */; };
+		65F4233F2190D4FD003284ED /* MovieDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F4233E2190D4FD003284ED /* MovieDetailService.swift */; };
+		65F423412190D514003284ED /* MovieCollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F423402190D514003284ED /* MovieCollectionService.swift */; };
+		65F423432190D774003284ED /* MovieCollectionResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 65F423422190D774003284ED /* MovieCollectionResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		65B470C7218DE97500E45AF4 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		65B470CA218DEBCE00E45AF4 /* MovieCollectionViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewControllerCell.swift; sourceTree = "<group>"; };
 		65B470CC218DEE3800E45AF4 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		65F4233C2190CFF5003284ED /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		65F4233E2190D4FD003284ED /* MovieDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailService.swift; sourceTree = "<group>"; };
+		65F423402190D514003284ED /* MovieCollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionService.swift; sourceTree = "<group>"; };
+		65F423422190D774003284ED /* MovieCollectionResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieCollectionResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +146,11 @@
 				65B470C7218DE97500E45AF4 /* ImageService.swift */,
 				65B470C6218DE97500E45AF4 /* NetworkService.swift */,
 				656C6F90218DBD1A000E1024 /* NowPlayingMovieService.swift */,
-				656C6F8E218DBD1A000E1024 /* MovieServiceParser.swift */,
+				65F4233E2190D4FD003284ED /* MovieDetailService.swift */,
+				65F423402190D514003284ED /* MovieCollectionService.swift */,
+				65F4233C2190CFF5003284ED /* MovieService.swift */,
 				656C6F8D218DBD1A000E1024 /* ServiceParser.swift */,
+				656C6F8E218DBD1A000E1024 /* MovieServiceParser.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				656C6FA6218DBEE7000E1024 /* NowPlayingResponse.json */,
+				65F423422190D774003284ED /* MovieCollectionResponse.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -278,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				656C6FA7218DBEE7000E1024 /* NowPlayingResponse.json in Resources */,
+				65F423432190D774003284ED /* MovieCollectionResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,10 +303,13 @@
 			files = (
 				656C6F92218DBD1A000E1024 /* ServiceParser.swift in Sources */,
 				656C6F6A218DB92A000E1024 /* AppDelegate.swift in Sources */,
+				65F4233F2190D4FD003284ED /* MovieDetailService.swift in Sources */,
 				65B470C5218DE6E600E45AF4 /* MovieCollectionViewController.swift in Sources */,
+				65F423412190D514003284ED /* MovieCollectionService.swift in Sources */,
 				656C6F95218DBD1A000E1024 /* NowPlayingMovieService.swift in Sources */,
 				65B470CB218DEBCE00E45AF4 /* MovieCollectionViewControllerCell.swift in Sources */,
 				656C6F93218DBD1A000E1024 /* MovieServiceParser.swift in Sources */,
+				65F4233D2190CFF5003284ED /* MovieService.swift in Sources */,
 				656C6F94218DBD1A000E1024 /* Movie.swift in Sources */,
 				65B470CD218DEE3800E45AF4 /* MovieDetailViewController.swift in Sources */,
 				65B470C8218DE97500E45AF4 /* NetworkService.swift in Sources */,

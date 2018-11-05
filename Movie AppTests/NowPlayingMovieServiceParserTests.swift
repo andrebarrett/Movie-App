@@ -28,7 +28,7 @@ class NowPlayingMovieServiceParserTests: XCTestCase {
             return
         }
 
-        let success = serviceParser.parseDataDictionary(dictionary)
+        let success = serviceParser.parseMovieDataDictionary(dictionary)
 
         XCTAssert(success)
     }
@@ -40,7 +40,7 @@ class NowPlayingMovieServiceParserTests: XCTestCase {
             return
         }
 
-        _ = serviceParser.parseDataDictionary(dictionary)
+        _ = serviceParser.parseMovieDataDictionary(dictionary)
 
         guard let item = parsedMovies?.first else {
             XCTFail("No items parsed")

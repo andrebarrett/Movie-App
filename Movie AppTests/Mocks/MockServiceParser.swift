@@ -11,7 +11,7 @@ class MockServiceParser: ServiceParser {
 
     var dictionaryPassed: [String: AnyObject]?
 
-    func parseDataDictionary(_ dictionary: [String : AnyObject]) -> Bool {
+    func parseMovieDataDictionary(_ dictionary: [String : AnyObject]) -> Bool {
         dictionaryPassed = dictionary
         let movie = Movie(id: 123, title: "Some Movie", releaseDate: "10-10-2015", overview: "Some description", language: "en", popularity: 4.8, posterPath: "/poster.jpg", backdropPath: "/backdrop.jpg")
 

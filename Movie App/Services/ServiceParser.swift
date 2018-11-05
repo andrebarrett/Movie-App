@@ -5,5 +5,9 @@
 import Foundation
 
 protocol ServiceParser {
-    func parseDataDictionary(_ dictionary: [String: AnyObject]) -> Bool
+    func parseMovieDataDictionary(_ dictionary: [String: AnyObject]) -> Bool
+
+    func parseMovieDetailsDictionary(_ dictionary: [String: AnyObject]) -> Bool
+
+    func parseMovieCollectionsDictionary(_ dictionary: [String: AnyObject]) -> Bool
 }

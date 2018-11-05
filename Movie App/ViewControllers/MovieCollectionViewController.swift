@@ -77,9 +77,14 @@ extension MovieCollectionViewController {
 
         let movie = moviesToDisplay[indexPath.row]
 
+        let networkService = SimpleNetworkService()
+        let serviceParser = MovieServiceParser()
+        let movieService = MovieService(networkService: networkService, serviceParser: serviceParser)
+
         guard let detailController = self.storyboard?.instantiateViewController(withIdentifier: StoryBoardViewController.MovieDetailViewController) as? MovieDetailViewController, let imageService = self.imageService  else { return }
 
-        detailController.configure(with: movie, imageService: imageService)
+        detailController.configure(with: movie, imageService: imageService, movieService: movieService)
+        serviceParser.delegate = detailController
 
         self.navigationController?.pushViewController(detailController, animated: true)
     }
@@ -131,6 +136,8 @@ extension MovieCollectionViewController {
 
 
 extension MovieCollectionViewController: MovieServiceParserDelegate {
+
+    func parser(_ parser: ServiceParser, didParseCollectionWithId identifier: String, forMovie movie: Movie) {}
 
     func parser(_ parser: ServiceParser, didParse: [Movie]) {
         moviesToDisplay = didParse
